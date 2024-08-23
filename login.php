@@ -77,10 +77,13 @@
                     <?php endif; ?>
 
 
+
+                    <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="" alt="">
-                  <span class="d-none d-lg-block"></span>
+                  <img src="assets/img/ustp-logo.png" alt="">
+                  <span class="d-none d-lg-block">Faculty Overload System</span>
                 </a>
+              </div>
               </div><!-- End Logo -->
 
               <div class="card mb-3">

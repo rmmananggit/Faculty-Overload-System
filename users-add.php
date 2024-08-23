@@ -183,11 +183,12 @@
               </div>
             </div>
 
-            <!-- Role -->
-            <div class="col-md-6">
-              <label for="roleDropdown" class="form-label">Role <span style="color: red;">*</span></label>
+            <h5 class="card-title">Employment Information</h5>
+            <!-- Position -->
+            <div class="col-md-3">
+              <label for="roleDropdown" class="form-label">Position <span style="color: red;">*</span></label>
               <select class="form-select" id="roleDropdown" required>
-                <option selected disabled value="">Select Role</option>
+                <option selected disabled value="">Select Position</option>
                 <option value="2">Staff</option>
                 <option value="3">Faculty</option>
                 <option value="4">HR</option>
@@ -197,14 +198,41 @@
               </div>
             </div>
 
+            <!-- Designation -->
+            <div class="col-md-3">
+              <label for="roleDropdown" class="form-label">Designation <span style="color: red;">*</span></label>
+              <select class="form-select" id="roleDropdown" required>
+                <option selected disabled value="">Select Designation</option>
+                <option value="2">RM</option>
+                <option value="3">GWAPO</option>
+                <option value="4">KAAYO</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a role.
+              </div>
+            </div>
+
             <!-- Department -->
-            <div class="col-md-6">
+            <div class="col-md-3">
               <label for="roleDropdown" class="form-label">Department <span style="color: red;">*</span></label>
               <select class="form-select" id="roleDropdown" required>
                 <option selected disabled value="">Select Department</option>
                 <option value="2">Staff</option>
                 <option value="3">Faculty</option>
                 <option value="4">HR</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a role.
+              </div>
+            </div>
+
+             <!-- Type of Employment -->
+             <div class="col-md-3">
+              <label for="roleDropdown" class="form-label">Type of Employment <span style="color: red;">*</span></label>
+              <select class="form-select" id="roleDropdown" required>
+                <option selected disabled value="">Select Employment Type</option>
+                <option value="1">Regular</option>
+                <option value="2">Part-time</option>
               </select>
               <div class="invalid-feedback">
                 Please select a role.
