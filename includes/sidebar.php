@@ -15,11 +15,19 @@
     </a>
   </li><!-- End Dashboard Nav -->
 
+  <li class="nav-heading">User Management</li>
+
+  <li class="nav-item">
+    <a class="nav-link <?php echo ($current_page == 'users.php') ? '' : 'collapsed'; ?>" href="users.php">
+      <i class="ri-account-pin-box-line"></i>
+      <span>Users</span>
+    </a>
+  </li><!-- End Users Nav -->
 
   <li class="nav-heading">Employees Management</li>
 
   <li class="nav-item">
-    <a class="nav-link <?php echo ($current_page == 'users.php') ? '' : 'collapsed'; ?>" href="users.php">
+    <a class="nav-link <?php echo ($current_page == 'employee.php') ? '' : 'collapsed'; ?>" href="employee.php">
       <i class="ri-account-pin-box-line"></i>
       <span>Employee</span>
     </a>

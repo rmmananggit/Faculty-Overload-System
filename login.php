@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +37,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<?php session_start(); ?>
 <body>
 
   <main>
@@ -47,44 +47,14 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-              
-
-              <div class="d-flex justify-content-center py-4">
-
-                    <!-- Session Status Message -->
-                    <?php if (isset($_SESSION['status'])): ?>
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <?php echo $_SESSION['status']; ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-
-                    <script>
-                    // Auto close the alert after 2 seconds
-                    setTimeout(function() {
-                    let alertElement = document.querySelector('.alert');
-                    if (alertElement) {
-                    let bsAlert = new bootstrap.Alert(alertElement);
-                    bsAlert.close();
-                    }
-                    }, 5000);
-                    </script>
-
-                    <?php 
-                    // Clear the session status after displaying it
-                    unset($_SESSION['status']);
-                    unset($_SESSION['status_code']);
-                    ?>
-                    <?php endif; ?>
-
-
-
+ 
                     <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
                   <img src="assets/img/ustp-logo.png" alt="">
-                  <span class="d-none d-lg-block">Faculty Overload System</span>
+                  <span class="d-none d-lg-block">UCHEQUE</span>
                 </a>
               </div>
-              </div><!-- End Logo -->
+             <!-- End Logo -->
 
               <div class="card mb-3">
               
@@ -99,9 +69,9 @@
                   <form class="row g-3 needs-validation" action="./controller/login.php" method="POST" autocomplete="off" novalidate>
 
                     <div class="col-12">
-                      <label for="emailAddress" class="form-label">Email Address</label>
+                      <label for="username" class="form-label">Username</label>
                       <div class="input-group has-validation">
-                        <input type="text" name="emailAddress" class="form-control" id="emailAddress" required>
+                        <input type="text" name="username" class="form-control" id="username" required>
                         <div class="invalid-feedback">Please enter your email address.</div>
                       </div>
                     </div>
@@ -142,7 +112,23 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <?php
+    if(isset($_SESSION['status']) && $_SESSION['status_code'] !='' )
+    {
+        ?>
+            <script>
+            swal({
+              title: "<?php echo $_SESSION['status']; ?>",
+            icon: "<?php echo $_SESSION['status_code']; ?>",
+            });
+            </script>
+            <?php
+            unset($_SESSION['status']);
+            unset($_SESSION['status_code']);
+    }     
+?>
+
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/chart.js/chart.umd.js"></script>

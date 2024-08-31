@@ -4,27 +4,25 @@ include('../config/config.php');
 
 
 if (isset($_POST['login'])) {
-    $emailAddress = mysqli_real_escape_string($con, $_POST['emailAddress']);
+    $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
     $login_query = "SELECT
-	users.userId, 
+	users.userId,
 	users.firstName, 
 	users.middleName, 
 	users.lastName, 
-	users.phoneNumber, 
-	users.address, 
-	users.emailAddress, 
-	users.`password`, 
-	users.role, 
-	users.isVerify, 
-	users.userStatus, 
-	users.otp, 
-	users.`timeStamp`
+    users.profilePicture,
+	users.username, 
+	users.password, 
+    users.emailAddress, 
+    users.role, 
+    users.userStatus, 
+	users.`dateCreated`
 FROM
 	users
     WHERE
-        users.emailAddress = '$emailAddress' AND
+        users.username = '$username' AND
         users.`password` = '$password'
     LIMIT 1";
 
@@ -52,31 +50,37 @@ FROM
 
             if ($userStatus == 'Inactive') {
                 $_SESSION['status'] = "Your account is inactive!";
+                $_SESSION['status_code'] = "warning";
                 header("Location: ../login.php");
                 exit();
             } elseif ($userStatus == 'Pending') {
                 $_SESSION['status'] = "Your account is still pending";
+                $_SESSION['status_code'] = "info";
                 header("Location: ../login.php");
                 exit();
             } elseif ($userStatus == 'Active') {
-                // $_SESSION['status'] = "Welcome $full_name!";
+                $_SESSION['status'] = "Welcome $fullName!";
+                $_SESSION['status_code'] = "success";
                 header("Location: ../index.php");
                 exit();
             }
         } else {
             $_SESSION['status'] = "Invalid Username and Password";
+            $_SESSION['status_code'] = "error";
             header("Location: ../login.php");
             exit();
         }
     } else {
         // Handle the query execution error
         $_SESSION['status'] = "Error executing the login query: " . mysqli_error($con);
-        header("Location: student_login.php");
+        $_SESSION['status_code'] = "error";
+        header("Location: ../login.php");
         exit();
     }
 } else {
     $_SESSION['status'] = "Invalid request";
-    header("Location: student_login.php");
+    $_SESSION['status_code'] = "error";
+    header("Location: ../login.php");
     exit();
 }
 

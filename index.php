@@ -33,7 +33,27 @@
                       <i class="ri-account-circle-line"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>145</h6>
+                      
+                    <?php
+                                   
+                                   $staff_query = "SELECT
+                                      users.*
+                                    FROM
+                                      users
+                                    WHERE
+                                      users.role = 4";
+                                   $staff_query_run = mysqli_query($con, $staff_query);
+
+
+                                   if($hr_total = mysqli_num_rows($staff_query_run))
+                                   {
+                                       echo '<h6 class="mb-0"> '.$hr_total.' </h6>';
+                                   }else
+                                   {
+                                       echo '<h6 class="mb-0">0</h6>';
+                                   }
+                      ?>
+
 
                     </div>
                   </div>
@@ -54,7 +74,26 @@
                       <i class="ri-account-pin-box-line"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>4</h6>
+                      
+                    <?php
+                                   
+                                   $hr_query = "SELECT
+                                      users.*
+                                    FROM
+                                      users
+                                    WHERE
+                                      users.role = 3";
+                                   $hr_query_run = mysqli_query($con, $hr_query);
+
+
+                                   if($hr_total = mysqli_num_rows($hr_query_run))
+                                   {
+                                       echo '<h6 class="mb-0"> '.$hr_total.' </h6>';
+                                   }else
+                                   {
+                                       echo '<h6 class="mb-0">0</h6>';
+                                   }
+                      ?>
 
                     </div>
                   </div>
@@ -76,7 +115,26 @@
                       <i class="bi bi-people"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>4</h6>
+                      
+                    <?php
+                                   
+                                   $hr_query = "SELECT
+                                      users.*
+                                    FROM
+                                      users
+                                    WHERE
+                                      users.role = 2";
+                                   $hr_query_run = mysqli_query($con, $hr_query);
+
+
+                                   if($hr_total = mysqli_num_rows($hr_query_run))
+                                   {
+                                       echo '<h6 class="mb-0"> '.$hr_total.' </h6>';
+                                   }else
+                                   {
+                                       echo '<h6 class="mb-0">0</h6>';
+                                   }
+                      ?>
                      
 
                     </div>
