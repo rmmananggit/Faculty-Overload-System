@@ -18,20 +18,37 @@
   <li class="nav-heading">User Management</li>
 
   <li class="nav-item">
-    <a class="nav-link <?php echo ($current_page == 'users.php') ? '' : 'collapsed'; ?>" href="users.php">
+    <a class="nav-link <?php echo ($current_page == 'hr.php') ? '' : 'collapsed'; ?>" href="hr.php">
       <i class="ri-account-pin-box-line"></i>
-      <span>Users</span>
+      <span>HR</span>
     </a>
-  </li><!-- End Users Nav -->
+  </li>
 
-  <li class="nav-heading">Employees Management</li>
+  <li class="nav-item">
+    <a class="nav-link <?php echo ($current_page == 'faculty.php') ? '' : 'collapsed'; ?>" href="faculty.php">
+      <i class="ri-account-pin-circle-fill"></i>
+      <span>Faculty</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link <?php echo ($current_page == 'staff.php') ? '' : 'collapsed'; ?>" href="staff.php">
+      <i class="ri-account-circle-line"></i>
+      <span>Staff</span>
+    </a>
+  </li>
+
+
+  <!-- <li class="nav-heading">Employees Management</li>
 
   <li class="nav-item">
     <a class="nav-link <?php echo ($current_page == 'employee.php') ? '' : 'collapsed'; ?>" href="employee.php">
-      <i class="ri-account-pin-box-line"></i>
+      <i class="ri-account-circle-line"></i>
       <span>Employee</span>
     </a>
-  </li><!-- End Users Nav -->
+  </li> -->
+
+  <li class="nav-heading">ITL and DTR Management</li>
 
 </ul>
 

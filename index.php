@@ -37,11 +37,11 @@
                     <?php
                                    
                                    $staff_query = "SELECT
-                                      users.*
+                                      employee.*
                                     FROM
-                                      users
+                                      employee
                                     WHERE
-                                      users.role = 4";
+                                      employee.role = 4";
                                    $staff_query_run = mysqli_query($con, $staff_query);
 
 
@@ -78,11 +78,11 @@
                     <?php
                                    
                                    $hr_query = "SELECT
-                                      users.*
+                                      employee.*
                                     FROM
-                                      users
+                                      employee
                                     WHERE
-                                      users.role = 3";
+                                      employee.role = 3";
                                    $hr_query_run = mysqli_query($con, $hr_query);
 
 
@@ -119,11 +119,11 @@
                     <?php
                                    
                                    $hr_query = "SELECT
-                                      users.*
+                                      employee.*
                                     FROM
-                                      users
+                                      employee
                                     WHERE
-                                      users.role = 2";
+                                      employee.role = 2";
                                    $hr_query_run = mysqli_query($con, $hr_query);
 
 

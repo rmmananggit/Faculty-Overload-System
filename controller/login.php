@@ -8,22 +8,22 @@ if (isset($_POST['login'])) {
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
     $login_query = "SELECT
-	users.userId,
-	users.firstName, 
-	users.middleName, 
-	users.lastName, 
-    users.profilePicture,
-	users.username, 
-	users.password, 
-    users.emailAddress, 
-    users.role, 
-    users.userStatus, 
-	users.`dateCreated`
+	employee.userId,
+	employee.firstName, 
+	employee.middleName, 
+	employee.lastName, 
+    employee.profilePicture,
+	employee.username, 
+	employee.password, 
+    employee.emailAddress, 
+    employee.role, 
+    employee.userStatus, 
+	employee.`timeStamp`
 FROM
-	users
+	employee
     WHERE
-        users.username = '$username' AND
-        users.`password` = '$password'
+        employee.username = '$username' AND
+        employee.`password` = '$password'
     LIMIT 1";
 
     $login_query_run = mysqli_query($con, $login_query);

@@ -4,7 +4,7 @@
   <div class="d-flex align-items-center justify-content-between">
     <a href="index.php" class="logo d-flex align-items-center">
       <img src="assets/img/ustp-logo.png" alt="">
-      <span class="d-none d-lg-block">Faculty Overload</span>
+         <span class="d-none d-lg-block">UCHEQUE</span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
   </div><!-- End Logo -->
@@ -31,7 +31,7 @@
           <?php
           if (isset($_SESSION['auth_user'])) {
             $userId = mysqli_real_escape_string($con, $_SESSION['auth_user']['userId']);
-            $query = "SELECT profilePicture FROM users WHERE userId = '$userId'";
+            $query = "SELECT profilePicture FROM employee WHERE userId = '$userId'";
             $query_run = mysqli_query($con, $query);
 
             if ($query_run) {

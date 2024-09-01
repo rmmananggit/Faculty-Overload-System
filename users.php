@@ -1,8 +1,8 @@
 <?php
- include("./includes/authentication.php");
- include("./includes/header.php");
- include("./includes/topbar.php");
- include("./includes/sidebar.php");
+include("./includes/authentication.php");
+include("./includes/header.php");
+include("./includes/topbar.php");
+include("./includes/sidebar.php");
 ?>
     <div class="pagetitle">
       <h1>Users</h1>
@@ -15,15 +15,13 @@
       </nav>
     </div><!-- End Page Title -->
 
-
     <section class="section dashboard">
       <div class="row">
         <div class="col-lg-12">
-
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">
-              <a href="users-add.php" class="btn btn-primary"><i class="ri-add-fill"></i> Add User</a>
+                <a href="users-add.php" class="btn btn-primary"><i class="ri-add-fill"></i> Add User</a>
               </h5>
 
               <!-- Table with stripped rows -->
@@ -39,16 +37,8 @@
                 </thead>
                 <tbody>
                     <?php
-                     $userId = $_SESSION['auth_user']['userId'];
-                    $query = "SELECT
-                        *, 
-                        users.*
-                    FROM
-                        users
-                    WHERE
-                        users.userId != $userId
-                    ORDER BY
-                        users.dateCreated DESC";
+                    $userId = $_SESSION['auth_user']['userId'];
+                    $query = "SELECT *, employee.* FROM employee WHERE employee.userId != $userId ORDER BY employee.timeStamp DESC";
                     $query_run = mysqli_query($con, $query);
                     if (mysqli_num_rows($query_run) > 0) {
                         foreach ($query_run as $row) {
@@ -86,8 +76,7 @@
                                         <?= htmlspecialchars($role); ?>
                                     </span>
                                 </td>
-                                <td><a type="button" class="btn btn-primary" href="users-view.php?id=<?=$row['userId'];?>"> <i class="ri-eye-line"></i></a></td>    
-                              
+                                <td><a type="button" class="btn btn-primary" href="users-view.php?id=<?= htmlspecialchars($row['userId']); ?>"> <i class="ri-eye-line"></i></a></td>    
                             </tr>
                     <?php
                         }
@@ -111,5 +100,5 @@
     </section>
 
 <?php
- include("./includes/footer.php");
+include("./includes/footer.php");
 ?>
