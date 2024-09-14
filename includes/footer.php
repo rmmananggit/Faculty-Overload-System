@@ -29,21 +29,32 @@
     </div>
   </footer><!-- End Footer -->
 
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <?php
-    if(isset($_SESSION['status']) && $_SESSION['status_code'] !='' )
-    {
-        ?>
-            <script>
-            swal({
-              title: "<?php echo $_SESSION['status']; ?>",
-            icon: "<?php echo $_SESSION['status_code']; ?>",
-            });
-            </script>
-            <?php
-            unset($_SESSION['status']);
-            unset($_SESSION['status_code']);
-    }     
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<?php
+  if(isset($_SESSION['status']) && $_SESSION['status_code'] !='') {
+      ?>
+      <script>
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "<?php echo $_SESSION['status_code']; ?>",
+          title: "<?php echo $_SESSION['status']; ?>"
+        });
+      </script>
+      <?php
+      unset($_SESSION['status']);
+      unset($_SESSION['status_code']);
+  }     
 ?>
 
 
@@ -58,6 +69,7 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  
   
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

@@ -4,7 +4,7 @@ include('../config/config.php');
 
 
 if (isset($_POST['login'])) {
-    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $emailAddress = mysqli_real_escape_string($con, $_POST['emailAddress']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
     $login_query = "SELECT
@@ -12,8 +12,7 @@ if (isset($_POST['login'])) {
 	employee.firstName, 
 	employee.middleName, 
 	employee.lastName, 
-    employee.profilePicture,
-	employee.username, 
+    employee.profilePicture, 
 	employee.password, 
     employee.emailAddress, 
     employee.role, 
@@ -22,7 +21,7 @@ if (isset($_POST['login'])) {
 FROM
 	employee
     WHERE
-        employee.username = '$username' AND
+        employee.emailAddress = '$emailAddress' AND
         employee.`password` = '$password'
     LIMIT 1";
 
@@ -65,7 +64,7 @@ FROM
                 exit();
             }
         } else {
-            $_SESSION['status'] = "Invalid Username and Password";
+            $_SESSION['status'] = "Invalid Email Address or Password";
             $_SESSION['status_code'] = "error";
             header("Location: ../login.php");
             exit();
