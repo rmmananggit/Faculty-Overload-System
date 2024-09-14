@@ -23,7 +23,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">
-              <a href="employee-add.php" class="btn btn-primary"><i class="ri-add-fill"></i> Add Faculty Account</a>
+              <a href="faculty-add.php" class="btn btn-primary"><i class="ri-add-fill"></i> Add Faculty Account</a>
               </h5>
 
               <!-- Table with stripped rows -->

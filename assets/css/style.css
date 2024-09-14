@@ -24,6 +24,20 @@ a {
   text-decoration: none;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-body {
+  flex: 1;
+}
+
+
 a:hover {
   color: #717ff5;
   text-decoration: none;

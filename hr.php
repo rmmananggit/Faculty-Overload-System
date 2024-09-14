@@ -23,7 +23,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">
-              <a href="employee-add.php" class="btn btn-primary"><i class="ri-add-fill"></i> Add HR Account</a>
+              <a href="hr-add.php" class="btn btn-primary"><i class="ri-add-fill"></i> Add HR Account</a>
               </h5>
 
               <!-- Table with stripped rows -->
@@ -31,28 +31,15 @@
                 <thead>
                   <tr>
                     <th>Profile</th>
-                    <th>ID</th>
-                    <th>Load</th>
+                    <th>Full Name</th>
+                    <th>Email Address</th>
                     <!-- <th data-type="date" data-format="YYYY/DD/MM">Birthday</th> -->
                     <th>Role</th>
                     <th>Action</th>
                   </tr>
                 </thead>
               <tbody>
-                <tr>
-                    <td>Ann Rachel Petalcorin</td>
-                    <td>annrachel@gmail.com</td>
-                    <td>09591552657</td>
-                  <td><span class="badge bg-success">HR</span></td>
-                    <td>  <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button></td>
-                </tr>
-                <tr>
-                    <td>Ann Rachel Petalcorin</td>
-                    <td>annrachel@gmail.com</td>
-                    <td>09591552657</td>
-                  <td><span class="badge bg-success">HR</span></td>
-                    <td>  <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button></td>
-                </tr>
+              
               </tbody>
 
               </table>

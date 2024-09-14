@@ -25,16 +25,16 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link <?php echo ($current_page == 'faculty.php') ? '' : 'collapsed'; ?>" href="faculty.php">
-      <i class="ri-account-pin-circle-fill"></i>
-      <span>Faculty</span>
+    <a class="nav-link <?php echo ($current_page == 'staff.php') ? '' : 'collapsed'; ?>" href="staff.php">
+      <i class="ri-account-circle-line"></i>
+      <span>Staff</span>
     </a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link <?php echo ($current_page == 'staff.php') ? '' : 'collapsed'; ?>" href="staff.php">
-      <i class="ri-account-circle-line"></i>
-      <span>Staff</span>
+    <a class="nav-link <?php echo ($current_page == 'faculty.php') ? '' : 'collapsed'; ?>" href="faculty.php">
+      <i class="ri-account-pin-circle-fill"></i>
+      <span>Faculty</span>
     </a>
   </li>
 

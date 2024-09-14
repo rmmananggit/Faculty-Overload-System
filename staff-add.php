@@ -7,13 +7,13 @@
 
 <div class="col-lg-12">
   <div class="pagetitle">
-    <h1>Add Employee</h1>
+    <h1>Add Staff</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
         <li class="breadcrumb-item">Employee Management</li>
         <li class="breadcrumb-item">Employee</li>
-        <li class="breadcrumb-item active">Add Employee</li>
+        <li class="breadcrumb-item active">Add Staff</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -27,6 +27,21 @@
         <h5 class="card-title">Personal Data</h5>
           <!-- Custom Styled Validation -->
           <form class="row g-3 needs-validation" novalidate>
+
+          <div class="col-md-12">
+          <div class="form-floating mb-3">
+          <label for="validationCustom01" class="form-floating"></label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="Employee Id" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter faculty id.
+              </div>
+              <label for="validationCustom01">Faculty Id <span style="color: red;">*</span></label>
+            </div>
+          </div>
+
 
           <div class="col-md-4">
           <div class="form-floating mb-3">
@@ -70,19 +85,7 @@
             </div>
           </div>
 
-          <div class="col-md-4">
-          <div class="form-floating mb-3">
-          <label for="validationCustom01" class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" placeholder="Employee Id" required>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Please enter employee id.
-              </div>
-              <label for="validationCustom01">Employee Id <span style="color: red;">*</span></label>
-            </div>
-          </div>
+         
 
           <div class="col-md-4">
             <div class="form-floating mb-3">
@@ -108,7 +111,7 @@
             </div>
             </div>
             
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="form-floating mb-3">
                     <input 
                     type="date" 
@@ -125,9 +128,9 @@
                     Please enter your birthday.
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="col-md-12">
+            <div class="col-md-8">
           <div class="form-floating mb-3">
           <label for="validationCustom01" class="form-floating"></label>
               <input type="text" class="form-control" id="validationCustom01" placeholder="Email Address" required>
@@ -142,11 +145,10 @@
           </div>
 
           <!-- Address  -->
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
               <label for="regionDropdown" class="form-label">Region <span style="color: red;">*</span></label>
               <select class="form-select" id="regionDropdown" required>
                 <option selected disabled value="">Select Region</option>
-                <!-- Options will be populated dynamically -->
               </select>
               <div class="invalid-feedback">
                 Please select a valid region.
@@ -156,7 +158,6 @@
               <label for="provinceDropdown" class="form-label">Province <span style="color: red;">*</span></label>
               <select class="form-select" id="provinceDropdown" required>
                 <option selected disabled value="">Select Province</option>
-                <!-- Options will be populated dynamically -->
               </select>
               <div class="invalid-feedback">
                 Please select a valid province.
@@ -166,7 +167,6 @@
               <label for="municipalityDropdown" class="form-label">Municipality <span style="color: red;">*</span></label>
               <select class="form-select" id="municipalityDropdown" required>
                 <option selected disabled value="">Select Municipality</option>
-                <!-- Options will be populated dynamically -->
               </select>
               <div class="invalid-feedback">
                 Please select a valid municipality.
@@ -176,16 +176,15 @@
               <label for="barangayDropdown" class="form-label">Barangay <span style="color: red;">*</span></label>
               <select class="form-select" id="barangayDropdown" required>
                 <option selected disabled value="">Select Barangay</option>
-                <!-- Options will be populated dynamically -->
               </select>
               <div class="invalid-feedback">
                 Please select a valid barangay.
               </div>
-            </div>
+            </div> -->
 
-            <h5 class="card-title">Employment Information</h5>
-            <!-- Position -->
-            <div class="col-md-3">
+            <!-- <h5 class="card-title">Employment Information</h5> -->
+
+            <!-- <div class="col-md-3">
               <label for="roleDropdown" class="form-label">Position <span style="color: red;">*</span></label>
               <select class="form-select" id="roleDropdown" required>
                 <option selected disabled value="">Select Position</option>
@@ -198,7 +197,6 @@
               </div>
             </div>
 
-            <!-- Designation -->
             <div class="col-md-3">
               <label for="roleDropdown" class="form-label">Designation <span style="color: red;">*</span></label>
               <select class="form-select" id="roleDropdown" required>
@@ -212,7 +210,6 @@
               </div>
             </div>
 
-            <!-- Department -->
             <div class="col-md-3">
               <label for="roleDropdown" class="form-label">Department <span style="color: red;">*</span></label>
               <select class="form-select" id="roleDropdown" required>
@@ -225,8 +222,7 @@
                 Please select a role.
               </div>
             </div>
-
-             <!-- Type of Employment -->
+  
              <div class="col-md-3">
               <label for="roleDropdown" class="form-label">Type of Employment <span style="color: red;">*</span></label>
               <select class="form-select" id="roleDropdown" required>
@@ -237,20 +233,15 @@
               <div class="invalid-feedback">
                 Please select a role.
               </div>
-            </div>
+            </div> -->
 
-
-           
             <div class="col-12">
-                <div class="row">
-                    <div class="col-auto">
-                    <button class="btn btn-primary" type="submit">Save</button>
-                    </div>
-                    <div class="col-auto">
-                    <button class="btn btn-secondary" type="button">Cancel</button>
-                    </div>
-                </div>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-secondary me-2" type="button">Cancel</button>
+                <button class="btn btn-primary" type="submit">Save</button>
+              </div>
             </div>
+
 
            
             </div>
