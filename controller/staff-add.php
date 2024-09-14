@@ -2,7 +2,7 @@
  include("../config/config.php");
  session_start();
 
- if (isset($_POST['addhr']))
+ if (isset($_POST['addStaff']))
  {
     $employeeId = $_POST['employeeId'];
     $firstName = $_POST['firstName'];
@@ -12,7 +12,7 @@
     $emailAddress = $_POST['emailAddress'];
     $userStatus = "Active";
     $password = $employeeId . '@' . $lastName;
-    $role = 2;
+    $role = 4;
 
     $query = "INSERT INTO `employee`(`employeeId`, `firstName`, `middleName`, `lastName`, `phoneNumber`,`emailAddress`, `password`, `userStatus`, `role`) VALUES ('$employeeId','$firstName','$middleName','$lastName','$phoneNumber','$emailAddress','$password','$userStatus','$role')";
     
@@ -20,9 +20,9 @@
 
     if ($query_run) {
 
-        $_SESSION['status'] = "HR account created!";
+        $_SESSION['status'] = "Staff account created!";
         $_SESSION['status_code'] = "success";
-        header('Location: ../hr.php');
+        header('Location: ../staff.php');
         exit(0);
     } else {
         echo "Error: " . mysqli_error($con);

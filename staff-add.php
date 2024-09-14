@@ -26,12 +26,12 @@
         <div class="card-body">
         <h5 class="card-title">Personal Data</h5>
           <!-- Custom Styled Validation -->
-          <form class="row g-3 needs-validation" novalidate>
+          <form class="row g-3 needs-validation" method="POST" action="./controller/staff-add.php" novalidate>
 
           <div class="col-md-12">
           <div class="form-floating mb-3">
           <label for="validationCustom01" class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" placeholder="Employee Id" required>
+              <input type="text" class="form-control" id="validationCustom01" name="employeeId" placeholder="Employee Id" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -46,7 +46,7 @@
           <div class="col-md-4">
           <div class="form-floating mb-3">
           <label for="validationCustom01" class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" placeholder="First Name" required>
+              <input type="text" class="form-control" id="validationCustom01" name="firstName" placeholder="First Name" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -60,21 +60,21 @@
           <div class="col-md-4">
           <div class="form-floating mb-3">
           <label for="validationCustom01" class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" placeholder="Middle Name" required>
+              <input type="text" class="form-control" id="validationCustom01" name="middleName" placeholder="Middle Name">
               <div class="valid-feedback">
                 Looks good!
               </div>
               <div class="invalid-feedback">
                 Please enter middle name.
               </div>
-              <label for="validationCustom01">Middle Name <span style="color: red;">*</span></label>
+              <label for="validationCustom01">Middle Name <span style="color: red;">(Optional)</span></label>
             </div>
           </div>
 
           <div class="col-md-4">
           <div class="form-floating mb-3">
           <label for="validationCustom01"  class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" placeholder="Last Name" required>
+              <input type="text" class="form-control" id="validationCustom01" name="lastName" placeholder="Last Name" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -84,32 +84,33 @@
               <label for="validationCustom01">Last Name <span style="color: red;">*</span></label>
             </div>
           </div>
-
          
 
-          <div class="col-md-4">
-            <div class="form-floating mb-3">
-                <input 
-                type="text" 
-                class="form-control" 
-                id="phoneNumber" 
-                placeholder="Phone Number" 
-                aria-describedby="inputGroupPrepend" 
-                pattern="\d{9}" 
-                maxlength="11" 
-                minlength="11"
-                required
-                title="Please enter a 9-digit phone number without spaces or other characters."
-                >
-                <label for="phoneNumber">Phone Number <span style="color: red;">*</span></label>
-                <div class="valid-feedback">
-                Looks good!
-                </div>
-                <div class="invalid-feedback">
-                Please enter a valid 9-digit phone number.
+            <div class="col-md-4">
+                <div class="form-floating mb-3">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="phoneNumber" 
+                        name="phoneNumber"
+                        placeholder="Phone Number" 
+                        aria-describedby="inputGroupPrepend" 
+                        pattern="\d{11}" 
+                        maxlength="11" 
+                        minlength="11"
+                        required
+                        title="Please enter an 11-digit phone number without spaces or other characters."
+                    >
+                    <label for="phoneNumber">Phone Number <span style="color: red;">*</span></label>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter a valid 11-digit phone number.
+                    </div>
                 </div>
             </div>
-            </div>
+
             
             <!-- <div class="col-md-4">
                 <div class="form-floating mb-3">
@@ -132,15 +133,15 @@
 
             <div class="col-md-8">
           <div class="form-floating mb-3">
-          <label for="validationCustom01" class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" placeholder="Email Address" required>
+          <label for="emailAddress" class="form-floating"></label>
+              <input type="text" class="form-control" id="emailAddress" name="emailAddress" placeholder="Email Address" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
               <div class="invalid-feedback">
                 Please enter email address.
               </div>
-              <label for="validationCustom01">Email Address <span style="color: red;">*</span></label>
+              <label for="emailAddress">Email Address <span style="color: red;">*</span></label>
             </div>
           </div>
 
@@ -238,7 +239,7 @@
             <div class="col-12">
               <div class="d-flex justify-content-end">
                 <button class="btn btn-secondary me-2" type="button">Cancel</button>
-                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn btn-primary" type="submit" name="addStaff">Save</button>
               </div>
             </div>
 
