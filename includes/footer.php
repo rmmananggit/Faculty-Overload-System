@@ -20,14 +20,14 @@
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
+<!-- <footer id="footer" class="footer">
     <div class="copyright">
       &copy; Copyright <strong><span>USTP</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       Designed by <a href="£">Petalcorin and Friends</a>
     </div>
-  </footer><!-- End Footer -->
+  </footer>End Footer -->
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

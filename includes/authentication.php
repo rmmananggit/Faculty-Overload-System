@@ -5,7 +5,7 @@ include('./config/config.php');
 if(!isset($_SESSION['auth']))
 {
     $_SESSION['status'] = "Login to access dashboard";
-    // $_SESSION['status_code'] = "warning";
+    $_SESSION['status_code'] = "warning";
     header("Location: login.php");
     exit(0);
 }

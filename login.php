@@ -32,6 +32,16 @@
   <!-- SweetAlert2 -->
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
 
+
+  <style>
+    body {
+      background-image: url('./assets/img/Background.png'); /* Path to your background image */
+      background-size: cover; /* Ensure the background image covers the whole page */
+      background-position: center; /* Center the background image */
+      background-repeat: no-repeat; /* Prevent repeating the background image */
+    }
+  </style>
+  
   <!-- =======================================================
   * Template Name: NiceAdmin
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
