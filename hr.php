@@ -5,7 +5,7 @@ include("./includes/topbar.php");
 include("./includes/sidebar.php");
 
 // Fetch data from the database
-$query = "SELECT * FROM `employee` WHERE `role` = '2'"; // Replace 'employee' with your actual table name
+$query = "SELECT * FROM `employee` WHERE `role` = '2'";
 $result = mysqli_query($con, $query);
 
 if (!$result) {
@@ -46,7 +46,6 @@ mysqli_free_result($result);
                 <th>Profile</th>
                 <th>Full Name</th>
                 <th>Email Address</th>
-                <th>Role</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -66,20 +65,20 @@ mysqli_free_result($result);
                         $profileImageSrc = './assets/img/noimage.jpg'; // Adjust path if needed
                     }
                     ?>
-                    <img src="<?php echo $profileImageSrc; ?>" alt="Profile Image" style="width: 100px; height: 100px; border-radius: 50%;">
+                    <img src="<?php echo $profileImageSrc; ?>" alt="Profile Image" style="width: 75px; height: 75px; border-radius: 50%;">
                   </td>
                   <td>
-                    <?php
-                    // Concatenate firstName, middleName, and lastName
-                    $fullName = trim($employee['firstName'] . ' ' . $employee['middleName'] . ' ' . $employee['lastName']);
-                    echo htmlspecialchars($fullName);
-                    ?>
+                      <?php
+                      // Concatenate firstName, middleName, and lastName
+                      $fullName = trim($employee['firstName'] . ' ' . $employee['middleName'] . ' ' . $employee['lastName']);
+                      ?>
+                      <a href="hr-view.php?id=<?php echo htmlspecialchars($employee['userId']); ?>">
+                        <?php echo htmlspecialchars($fullName); ?>
+                      </a>
                   </td>
                   <td><?php echo htmlspecialchars($employee['emailAddress']); ?></td>
-                  <td><?php echo htmlspecialchars($employee['role']); ?></td>
                   <td>
-                    <!-- <a href="hr-edit.php?id=<?php echo htmlspecialchars($employee['id']); ?>" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="hr-delete.php?id=<?php echo htmlspecialchars($employee['id']); ?>" class="btn btn-danger btn-sm">Delete</a> -->
+                  <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                   </td>
                 </tr>
               <?php endforeach; ?>
