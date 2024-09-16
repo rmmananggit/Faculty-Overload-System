@@ -48,7 +48,10 @@ if (isset($_GET['id'])) {
 // Close the database connection
 mysqli_close($con);
 
-// Redirect to the previous page or a specific page
-header('Location: ../hr.php'); // Adjust the redirection URL as needed
+// Determine where to redirect
+$redirectTo = isset($_GET['redirect']) ? $_GET['redirect'] : 'hr.php';
+
+// Redirect to the referring page or a default page
+header('Location: ../' . $redirectTo);
 exit();
 ?>

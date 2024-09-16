@@ -2,7 +2,7 @@
  include("../config/config.php");
  session_start();
 
- if (isset($_POST['addHr']))
+ if (isset($_POST['addHr']))    
  {
     $employeeId = $_POST['employeeId'];
     $firstName = $_POST['firstName'];

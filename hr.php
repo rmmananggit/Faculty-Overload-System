@@ -80,7 +80,7 @@ mysqli_free_result($result);
 
                   <td>
                   <a type="button" class="btn btn-primary" href="hr-edit.php?id=<?=$employee['userId'];?>"><i class="bi bi-pen"></i></a>
-                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-user-id="<?= htmlspecialchars($employee['userId']); ?>"> <i class="bi bi-trash"></i> </button>
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-user-id="<?= htmlspecialchars($employee['userId']); ?>" data-redirect-to="hr.php"> <i class="bi bi-trash"></i></button>
                   </td>
                 </tr>
               <?php endforeach; ?>

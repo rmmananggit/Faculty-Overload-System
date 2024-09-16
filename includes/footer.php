@@ -73,18 +73,15 @@
   
   <script>
     // Script for deleting account in modal
-document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     var deleteModal = document.getElementById('deleteModal');
     deleteModal.addEventListener('show.bs.modal', function (event) {
-        // Button that triggered the modal
         var button = event.relatedTarget;
-        
-        // Extract info from data-* attributes
         var userId = button.getAttribute('data-user-id');
+        var redirectTo = button.getAttribute('data-redirect-to');
         
-        // Set the href attribute of the confirm button to the delete URL with the user ID
         var confirmButton = deleteModal.querySelector('#confirmDeleteButton');
-        confirmButton.setAttribute('href', './controller/delete-account.php?id=' + userId);
+        confirmButton.setAttribute('href', './controller/delete-account.php?id=' + userId + '&redirect=' + encodeURIComponent(redirectTo));
     });
 });
 </script>
