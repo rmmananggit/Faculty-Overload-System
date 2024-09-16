@@ -2,7 +2,7 @@
  include("../config/config.php");
  session_start();
 
- if (isset($_POST['editHr']))
+ if (isset($_POST['staffEdit']))
  {
     $userId = $_POST['userId'];
     $employeeId = $_POST['employeeId'];
@@ -19,9 +19,9 @@
 
     if ($query_run) {
 
-        $_SESSION['status'] = "HR account updated!";
+        $_SESSION['status'] = "Staff account updated!";
         $_SESSION['status_code'] = "success";
-        header('Location: ../hr.php');
+        header('Location: ../staff.php');
         exit(0);
     } else {
         echo "Error: " . mysqli_error($con);

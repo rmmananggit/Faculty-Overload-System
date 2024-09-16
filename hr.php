@@ -46,6 +46,7 @@ mysqli_free_result($result);
                 <th>Profile</th>
                 <th>Full Name</th>
                 <th>Email Address</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -77,7 +78,15 @@ mysqli_free_result($result);
                       </a>
                   </td>
                   <td><?php echo htmlspecialchars($employee['emailAddress']); ?></td>
-
+                  <td>
+                      <?php
+                      // Determine the badge class based on the userStatus
+                      $badgeClass = $employee['userStatus'] === 'Active' ? 'bg-success' : 'bg-danger';
+                      ?>
+                      <span class="badge <?php echo $badgeClass; ?>">
+                          <?php echo htmlspecialchars($employee['userStatus']); ?>
+                      </span>
+                  </td>
                   <td>
                   <a type="button" class="btn btn-primary" href="hr-edit.php?id=<?=$employee['userId'];?>"><i class="bi bi-pen"></i></a>
                   <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-user-id="<?= htmlspecialchars($employee['userId']); ?>" data-redirect-to="hr.php"> <i class="bi bi-trash"></i></button>

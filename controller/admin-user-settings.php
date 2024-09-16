@@ -47,6 +47,7 @@ if (isset($_POST['editProfile'])) {
         $result = mysqli_stmt_execute($stmt);
 
         if ($result) {
+            $_SESSION['auth_user']['fullName'] = $firstName . ' ' . $lastName;
             $_SESSION['status'] = "Profile has been updated";
             $_SESSION['status_code'] = "success";
             header('Location: ../profile.php');
