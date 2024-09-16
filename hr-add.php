@@ -238,8 +238,8 @@
 
             <div class="col-12">
               <div class="d-flex justify-content-end">
-                <button class="btn btn-secondary me-2" type="button">Cancel</button>
-                <button class="btn btn-primary" type="submit" name="addhr">Save</button>
+              <a href="hr.php" class="btn btn-secondary me-2" role="button">Cancel</a>
+                <button class="btn btn-primary" type="submit" name="addHr">Save</button>
               </div>
             </div>
 

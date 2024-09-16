@@ -24,14 +24,39 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
+
+                     <?php
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
+                        $users = "SELECT
+                                employee.userId,
+                                employee.employeeId, 
+                                employee.firstName, 
+                                employee.middleName, 
+                                employee.lastName, 
+                                employee.phoneNumber, 
+                                employee.emailAddress,
+                                employee.userStatus
+                            FROM
+                                employee
+                            WHERE
+                                employee.userId = $id";
+                        $users_run = mysqli_query($con, $users);
+
+                        if (mysqli_num_rows($users_run) > 0) {
+                            foreach ($users_run as $user) {
+                    ?>
         <h5 class="card-title">Personal Data</h5>
           <!-- Custom Styled Validation -->
-          <form class="row g-3 needs-validation" method="POST" action="./controller/hr-add.php" novalidate>
+          <form class="row g-3 needs-validation" method="POST" action="./controller/hr-edit.php" novalidate>
+
+            <!-- Hidden field for job_id -->
+            <input type="hidden" name="userId" value="<?= $user['userId']; ?>">
 
           <div class="col-md-12">
           <div class="form-floating mb-3">
           <label for="validationCustom01" class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" name="employeeId" placeholder="Employee Id" required>
+              <input type="text" class="form-control" id="validationCustom01" value="<?= $user['employeeId']; ?>" name="employeeId" placeholder="Employee Id" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -46,7 +71,7 @@
           <div class="col-md-4">
           <div class="form-floating mb-3">
           <label for="validationCustom01" class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" name="firstName" placeholder="First Name" required>
+              <input type="text" class="form-control" id="validationCustom01" value="<?= $user['firstName']; ?>" name="firstName" placeholder="First Name" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -60,7 +85,7 @@
           <div class="col-md-4">
           <div class="form-floating mb-3">
           <label for="validationCustom01" class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" name="middleName" placeholder="Middle Name">
+              <input type="text" class="form-control" id="validationCustom01" value="<?= $user['middleName']; ?>" name="middleName" placeholder="Middle Name">
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -74,7 +99,7 @@
           <div class="col-md-4">
           <div class="form-floating mb-3">
           <label for="validationCustom01"  class="form-floating"></label>
-              <input type="text" class="form-control" id="validationCustom01" name="lastName" placeholder="Last Name" required>
+              <input type="text" class="form-control" id="validationCustom01" value="<?= $user['lastName']; ?>" name="lastName" placeholder="Last Name" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -100,6 +125,7 @@
                         minlength="11"
                         required
                         title="Please enter an 11-digit phone number without spaces or other characters."
+                        value="<?= $user['phoneNumber']; ?>"
                     >
                     <label for="phoneNumber">Phone Number <span style="color: red;">*</span></label>
                     <div class="valid-feedback">
@@ -134,7 +160,7 @@
             <div class="col-md-8">
           <div class="form-floating mb-3">
           <label for="emailAddress" class="form-floating"></label>
-              <input type="text" class="form-control" id="emailAddress" name="emailAddress" placeholder="Email Address" required>
+              <input type="text" class="form-control" id="emailAddress" value="<?= $user['emailAddress']; ?>" name="emailAddress" placeholder="Email Address" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -144,110 +170,37 @@
               <label for="emailAddress">Email Address <span style="color: red;">*</span></label>
             </div>
           </div>
-
-          <!-- Address  -->
-            <!-- <div class="col-md-3">
-              <label for="regionDropdown" class="form-label">Region <span style="color: red;">*</span></label>
-              <select class="form-select" id="regionDropdown" required>
-                <option selected disabled value="">Select Region</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid region.
-              </div>
+          
+            <div class="col-md-4">
+                <label for="roleDropdown" class="form-label">Status <span style="color: red;">*</span></label>
+                <select class="form-select" id="roleDropdown" name="userStatus" required>
+                    <option disabled value="">Select Status</option>
+                    <option value="Active" <?= $user['userStatus'] === 'Active' ? 'selected' : ''; ?>>Active</option>
+                    <option value="Inactive" <?= $user['userStatus'] === 'Inactive' ? 'selected' : ''; ?>>Inactive</option>
+                </select>
+                <div class="invalid-feedback">Please select status.</div>
             </div>
-            <div class="col-md-3">
-              <label for="provinceDropdown" class="form-label">Province <span style="color: red;">*</span></label>
-              <select class="form-select" id="provinceDropdown" required>
-                <option selected disabled value="">Select Province</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid province.
-              </div>
-            </div>
-            <div class="col-md-3">
-              <label for="municipalityDropdown" class="form-label">Municipality <span style="color: red;">*</span></label>
-              <select class="form-select" id="municipalityDropdown" required>
-                <option selected disabled value="">Select Municipality</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid municipality.
-              </div>
-            </div>
-            <div class="col-md-3">
-              <label for="barangayDropdown" class="form-label">Barangay <span style="color: red;">*</span></label>
-              <select class="form-select" id="barangayDropdown" required>
-                <option selected disabled value="">Select Barangay</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid barangay.
-              </div>
-            </div> -->
-
-            <!-- <h5 class="card-title">Employment Information</h5> -->
-
-            <!-- <div class="col-md-3">
-              <label for="roleDropdown" class="form-label">Position <span style="color: red;">*</span></label>
-              <select class="form-select" id="roleDropdown" required>
-                <option selected disabled value="">Select Position</option>
-                <option value="2">Staff</option>
-                <option value="3">Faculty</option>
-                <option value="4">HR</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a role.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="roleDropdown" class="form-label">Designation <span style="color: red;">*</span></label>
-              <select class="form-select" id="roleDropdown" required>
-                <option selected disabled value="">Select Designation</option>
-                <option value="2">RM</option>
-                <option value="3">GWAPO</option>
-                <option value="4">KAAYO</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a role.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="roleDropdown" class="form-label">Department <span style="color: red;">*</span></label>
-              <select class="form-select" id="roleDropdown" required>
-                <option selected disabled value="">Select Department</option>
-                <option value="2">Staff</option>
-                <option value="3">Faculty</option>
-                <option value="4">HR</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a role.
-              </div>
-            </div>
-  
-             <div class="col-md-3">
-              <label for="roleDropdown" class="form-label">Type of Employment <span style="color: red;">*</span></label>
-              <select class="form-select" id="roleDropdown" required>
-                <option selected disabled value="">Select Employment Type</option>
-                <option value="1">Regular</option>
-                <option value="2">Part-time</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a role.
-              </div>
-            </div> -->
 
             <div class="col-12">
               <div class="d-flex justify-content-end">
-                <button class="btn btn-secondary me-2" type="button">Cancel</button>
-                <button class="btn btn-primary" type="submit" name="addhr">Save</button>
+              <a href="hr.php" class="btn btn-secondary me-2" role="button">Cancel</a>
+                <button class="btn btn-primary" type="submit" name="editHr">Save</button>
               </div>
-            </div>
-
-
+          </div>
            
             </div>
-          </form><!-- End Custom Styled Validation -->
+          </form>
         </div>
+
+            <?php
+                            }
+                        } else {
+                    ?>
+                          <h4 class="mt-4">No Record Found!</h4>
+                    <?php
+                        }
+                    }
+            ?>
       </div>
     </div>
   </div>
