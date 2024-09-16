@@ -65,7 +65,7 @@ mysqli_free_result($result);
                         $profileImageSrc = './assets/img/noimage.jpg'; // Adjust path if needed
                     }
                     ?>
-                    <img src="<?php echo $profileImageSrc; ?>" alt="Profile Image" style="width: 75px; height: 75px; border-radius: 50%;">
+                    <img src="<?php echo $profileImageSrc; ?>" alt="Profile Image" style="width: 75px; height: 75px;">
                   </td>
                   <td>
                       <?php
@@ -78,6 +78,7 @@ mysqli_free_result($result);
                   </td>
                   <td><?php echo htmlspecialchars($employee['emailAddress']); ?></td>
                   <td>
+                  <button type="button" class="btn btn-primary"><i class="bi bi-pen"></i></button>
                   <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                   </td>
                 </tr>
