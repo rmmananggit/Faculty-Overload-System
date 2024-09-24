@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="icon" type="image/png" sizes="96x96" href="images/icon.png">
+	<link rel="stylesheet" href="style.css">
+
+	<title>Ucheque</title>
+	<!-- <script src="calendar.js" type="text/javascript"></script> -->
+	
+</head>
+<body>
+
+
+	<!-- SECTION SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			
+			<img src="images/Igo.png"> 
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-home' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="user.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">User Management</span>
+				</a>
+			</li>
+			<li>
+				<a href="emp-itl.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Employee ITL</span>
+				</a>
+			</li>
+			<li>
+				<a href="emp-dtr.html">
+					<i class='bx bxs-time' ></i>
+					<span class="text">Employee DTR</span>
+				</a>
+			</li>
+			<!-- <li>
+				<a href="ovr-monit.html"> this is only for staff hr and faculty
+					<i class='bx bxs-check-square' ></i>
+					<span class="text">overload Monitoring</span>
+				</a>
+			</li> -->
+            <li>
+				<a href="reports.html">
+					<i class='bx bxs-report' ></i>
+					<span class="text">reports</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="login.html" class="logout"> <!-- switch acc./ login as multiple acc. -->
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">ADMIN</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!--SECTION SIDEBAR -->
+
+
+
+	<!-- SECTION CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+            <div><i class='bx bx-menu' ></i></div>
+			<div class="cont">
+                <a href="#" class="notification">
+                    <i class='bx bxs-bell' ></i>
+                    <span class="num">8</span>
+                </a>
+                <a href="#" class="profile">
+                    <img src="img/people.png">
+                </a>
+
+            </div>
+			
+		</nav>
+		<!-- SECTION NAVBAR -->
+
+		<!-- CONTENT MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+			<div class="greet">
+				<span class="text">
+					<h3>Welcome Back, Admin</h3>
+				</span>
+			
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>1020</h3>
+						<p>Staff</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>2834</h3>
+						<p>Faculty</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>2543</h3>
+						<p>HR</p>
+					</span>
+				</li>
+			</ul>
+
+
+			<div class="table-data">
+				<div class="order">
+					<!-- insert calendar here -->
+					 <div class="hero">
+						<div class="calendar">
+							<div class="left-calendar">
+								<p id="date">21</p>
+								<p id="day">Saturday</p>
+
+							</div>
+							<div class="right-calendar">
+								<p id="month">September</p>
+								<p id="year">2024</p>
+
+							</div>
+						</div>
+						<div class="academic-info">
+							<h1>Academic Information</h1>
+							<div class="semester-details">
+								<p><strong>Current Semester:</strong> <span id="currentSemester"></span></p>
+								<p><strong>School Year:</strong> <span id="schoolYear"></span></p>
+							</div>
+						</div>
+					 </div>
+				</div>
+				<div class="todo">
+					<div class="head">
+						<h3>Todos</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+
+	<script src="acad.js" ></script>
+	<script src="script.js" ></script>
+	<script>
+		const date = document.getElementById("date");
+		const day = document.getElementById("day");
+		const month = document.getElementById("month");
+		const year = document.getElementById("year");
+
+		const today = new Date();
+
+		const weekDays = ["Sunday","Monday","Tuesday","Wednesday",
+		"Thursday","Friday", "Saturday"];
+		const allMonths = ["January","February","March","April",
+		"May","June","July","August","September","October","November","December",];
+
+		date.innerHTML = today.getDate();
+		day.innerHTML = weekDays[today.getDay()] ;
+		month.innerHTML = allMonths[today.getMonth()];
+		year.innerHTML = today.getFullYear();
+	</script>
+</body>
+
+</html>

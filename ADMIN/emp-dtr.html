@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icon.png">
+	<link rel="stylesheet" href="style.css">
+
+	<title>Ucheque</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<img src="images/Igo.png"> 
+		</a>
+		<ul class="side-menu top">
+			<li >
+				<a href="index.html">
+					<i class='bx bxs-home' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="user.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">User Management</span>
+				</a>
+			</li>
+            <li>
+                <a href="emp-itl.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Employee ITL</span>
+				</a>
+            </li>
+			<li class="active">
+				<a href="emp-dtr.html">
+					<i class='bx bxs-time' ></i>
+					<span class="text">Employee DTR</span>
+				</a>
+			</li>
+			<!-- <li>
+				<a href="ovr-monit.html">
+					<i class='bx bxs-check-square' ></i>
+					<span class="text">overload Monitoring</span>
+				</a>
+			</li> -->
+            <li>
+				<a href="#">
+					<i class='bx bxs-report' ></i>
+					<span class="text">reports</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Admin</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+            <div><i class='bx bx-menu' ></i></div>
+			<div class="cont">
+                <a href="#" class="notification">
+                    <i class='bx bxs-bell' ></i>
+                    <span class="num">8</span>
+                </a>
+                <a href="#" class="profile">
+                    <img src="img/people.png">
+                </a>
+
+            </div>
+			
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			
+        
+			<div class="head-title">
+				<div class="left">
+					<h1>Employee DTR</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				<!-- <div class="right">
+					<a href="import.html" class="btn-add">
+						<i class='bx bxs-file-import' ></i>
+						<span class="text">Import User</span>
+                	</a>
+					<a href="javascript:void(0);" class="btn-add" onclick="toggleChoices()">
+						<i class='bx bxs-user-plus'></i>
+						<span class="text">Add User</span>
+					</a>
+					
+					Choices to appear on click 
+					<div class="choices" id="choices">
+						<a href="add-staff.html">Staff</a>
+						<a href="add-faculty.html">Faculty</a>
+						<a href="add-hr.html">HR</a>
+					</div>
+				</div> -->				
+					
+			</div>
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<select id="acad-year">
+							<option value="" disabled selected>Select Academic Year</option>
+							<option value="option1">2024-2025</option>
+							<option value="option2">2025-2026</option>
+							<option value="option3">2026-2027</option>
+						</select>
+						<select id="acad-sem">
+							<option value="" disabled selected>Select Academic Semester</option>
+							<option value="option1">1st Semester</option>
+							<option value="option2">2nd Semester</option>
+						</select>
+                        <select id="acad-month">
+							<option value="" disabled selected>For the Month of</option>
+							<option value="option1">January</option>
+							<option value="option2">February</option>
+                            <option value="option3">March</option>
+                            <option value="option4">April</option>
+                            <option value="option5">May</option>
+                            <option value="option6">June</option>
+                            <option value="option7">July</option>
+                            <option value="option8">August</option>
+                            <option value="option9">September</option>
+                            <option value="option10">October</option>
+                            <option value="option11">November</option>
+                            <option value="option12">December </option>
+						</select>
+						<i class='bx bx-search' ></i>
+						
+
+					
+					</div>
+					<table>
+						<thead>
+							<tr>
+                                <th>Id </th>
+								<th>Name</th>
+                                <th>Designation</th>
+								<th>Week 1</th>
+								<th>Week 2</th>
+                                <th>Week 3</th>
+                                <th>Week 4</th>
+                                <th>Total</th>
+                                <th>DTR</th>
+								<th>Action</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+                                <td>202412345</td>
+								<td><p>Jay Noel Rojo</p></td>
+								<td><span class="status credit">Assoc.Prof. 1</span></td>
+								<td><span class="status credit">67:15</span></td>
+								<td><span class="status credit">62:07</span></td>
+                                <td><span class="status credit">56:39</span></td>
+                                <td><span class="status credit">64:44</span></td>
+								<td><span class="status credit">250.45</span></td>
+                                <td><span class="status file">dtr.file</span></td>  
+								<td><i class='bx bxs-cloud-upload'></i><i class='bx bx-trash' ></i></td>
+							</tr>
+                            <tr>
+                                <td>202467891</td>
+								<td><p>Shakira Morales</p></td>
+								<td><span class="status credit">none</span></td>
+								<td><span class="status credit">67:15</span></td>
+								<td><span class="status credit">62:07</span></td>
+                                <td><span class="status credit">56:39</span></td>
+                                <td><span class="status credit">64:44</span></td>
+								<td><span class="status credit">250.45</span></td>
+                                <td><span class="status file">dtr.file</span></td>  
+                                <td><i class='bx bxs-cloud-upload'></i><i class='bx bx-trash' ></i></td>
+							</tr>
+                            <tr>
+                                <td>202467891</td>
+								<td><p>Jc Vanny Mill Saledaien</p></td>
+								<td><span class="status credit"></span></td>
+								<td><span class="status credit"></span></td>
+								<td><span class="status credit"></span></td>
+                                <td><span class="status credit"></span></td>
+                                <td><span class="status credit"></span></td>
+								<td><span class="status credit"></span></td>
+                                <td></td> 
+								<td><i class='bx bxs-cloud-upload'></i><i class='bx bx-trash' ></i></td>
+							</tr>
+							<tr>
+                                <td>202465278</td>
+								<td><p>Petal May Dal</p></td>
+								<td><span class="status credit"></span></td>
+								<td><span class="status credit"></span></td>
+								<td><span class="status credit"></span></td>
+                                <td><span class="status credit"></span></td>
+                                <td><span class="status credit"></span></td>
+								<td><span class="status credit"></span></td>
+                                <td></td> 
+                                <td><i class='bx bxs-cloud-upload'></i><i class='bx bx-trash' ></i></td>
+							</tr>
+							
+						</tbody>
+                                                 
+					</table>
+                    <div class="pagination">
+                        <button class="prev">Prev</button>
+                        <span class="page-info">Page: <span class="current-page">1</span> of 100</span>
+                        <button class="next">Next</button>
+                        <select class="page-select">
+                          <!-- Options for page numbers -->
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <!-- Add more options as needed -->
+                        </select>
+                      </div>
+
+				</div>
+				
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+
+	<script src="script.js"></script>
+</body>
+</html>
