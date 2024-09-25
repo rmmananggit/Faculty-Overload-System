@@ -225,7 +225,7 @@
     <!-- Submit Buttons -->
     <div class="col-12">
       <div class="d-flex justify-content-end">
-        <button class="btn btn-secondary me-2" type="button">Cancel</button>
+      <a href="faculty.php" class="btn btn-secondary me-2" role="button">Cancel</a>
         <button class="btn btn-primary" type="submit" name="facultyAdd">Save</button>
       </div>
     </div>
